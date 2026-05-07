@@ -38,10 +38,11 @@
 import random
 
 def get_numbers_ticket(min_val, max_val, quantity):
-    if min_val < 1 or max_val > 1000 or quantity < min_val or quantity > max_val:
+    if min_val < 1 or max_val > 1000 or quantity < 1 or quantity > max_val - min_val + 1:
         return []
     return sorted(random.sample(range( min_val , max_val + 1 ), quantity))
 
 print(get_numbers_ticket(1, 50, 6))
 print(get_numbers_ticket(1, 49, 6))
 print(get_numbers_ticket(1, 1000, 10))
+print(get_numbers_ticket(11, 1000, 10)) 
